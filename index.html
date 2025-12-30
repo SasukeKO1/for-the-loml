@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Nisha</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family:Georgia,serif;
+    min-height:100vh;
+    background:linear-gradient(135deg,#f7b7d2,#f4a6c4);
+    transition:background 3s ease;
+    overflow:hidden;
+}
+body.night{
+    background:linear-gradient(135deg,#1b0820,#120415);
+}
+body.unlocked{
+    overflow:auto;
+}
+
+/* LOCK SCREEN */
+.lock{
+    position:fixed;
+    inset:0;
+    z-index:50;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+    background:linear-gradient(135deg,#f7b7d2,#f4a6c4);
+}
+.lock h1{
+    font-size:2.4rem;
+    margin-bottom:8px;
+}
+.lock p{
+    opacity:.9;
+    margin-bottom:15px;
+}
+#countdown{
+    opacity:.85;
+    margin-bottom:18px;
+}
+input{
+    padding:12px 18px;
+    border:none;
+    border-radius:25px;
+    outline:none;
+    text-align:center;
+    font-size:1rem;
+}
+button{
+    margin-top:18px;
+    padding:12px 28px;
+    border:none;
+    border-radius:25px;
+    background:white;
+    color:#b03060;
+    font-size:1rem;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,182,193,.6);
+}
+.shake{
+    animation:shake .4s;
+}
+@keyframes shake{
+    0%,100%{transform:translateX(0)}
+    25%{transform:translateX(-6px)}
+    75%{transform:translateX(6px)}
+}
+
+/* MAIN CONTENT */
+.main{
+    opacity:0;
+    pointer-events:none;
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px 120px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    color:#f6eaf2;
+    min-height:100vh;
+    transition:opacity 1.5s ease;
+}
+.main.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* LETTER */
+.letter{
+    line-height:1.75;
+    font-size:1rem;
+    max-height:80vh;
+    overflow-y:auto;
+    padding-right:10px;
+}
+.letter p{
+    margin-bottom:22px;
+}
+
+/* PHOTOS */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+.photo{
+    position:relative;
+    transform:rotate(-3deg);
+}
+.photo:nth-child(even){
+    transform:rotate(3deg);
+}
+.photo img{
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+.caption{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    right:10px;
+    font-size:.8rem;
+    opacity:0;
+    transition:.6s;
+}
+.photo:hover .caption{
+    opacity:1;
+}
+
+/* HEARTS */
+.heart{
+    position:fixed;
+    bottom:-120px;
+    color:rgba(255,182,193,.35);
+    animation:float 18s linear infinite;
+    pointer-events:none;
+}
+@keyframes float{
+    from{transform:translateY(0);opacity:0}
+    10%{opacity:.4}
+    to{transform:translateY(-120vh);opacity:0}
+}
+
+/* FIREWORKS */
+.firework{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:pink;
+    border-radius:50%;
+    animation:boom 1.2s ease-out forwards;
+}
+@keyframes boom{
+    from{transform:scale(1);opacity:1}
+    to{transform:scale(15);opacity:0}
+}
+
+@media(max-width:850px){
+    .main{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK SCREEN -->
+<div class="lock" id="lock">
+    <h1>For Nisha</h1>
+    <p>This opens only for you.</p>
+    <div id="countdown"></div>
+    <input type="password" id="pass" placeholder="Enter password">
+    <button onclick="unlock()">Unlock</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main" id="content">
+
+<div class="letter">
+<p>As the year comes to its end, I find myself thinking less about what is leaving and more about what remains. Time moves forward the way it always does, quietly, without asking us if we are ready. And yet, here I am, standing at the edge of a new year with your presence resting gently inside me, unchanged by calendars or clocks.</p>
+
+<p>I want you to know that through every month that passed, through all the days that felt too long and the nights that felt too quiet, you were never distant to me in the ways that mattered. Even when the year was heavy, even when we were separated by miles and circumstances, you lived in my thoughts with an ease that surprised me.</p>
+
+<p>This year taught me many things, but the most important one was this: loving you does not depend on proximity. It depends on intention. On choosing. On staying present even when presence looks like waiting.</p>
+
+<p>There were moments this year when I wished I could have been closer to you, not just in distance but in expression. Moments when I held back words because I didn’t know how to give them to you gently enough. And yet, all those unsent thoughts stayed with me, shaping my days, reminding me of how deeply you matter.</p>
+
+<p>I think of you when the year changes because you feel like continuity to me. Like something that doesn’t reset at midnight. While everything else feels temporary and uncertain, my feelings for you feel steady, almost stubborn in their persistence.</p>
+
+<p>You are woven into my memories of this year in ways you may not even realize. In quiet evenings. In moments of reflection. In times when I needed comfort and found it simply by thinking of you. Your existence has softened this year for me, even when things were not easy.</p>
+
+<p>There is something deeply comforting about knowing that as one year ends and another begins, my heart does not need to learn anything new about loving you. It already knows. It has known all along.</p>
+
+<p>I don’t want to make grand promises for the new year. I’ve learned that the most honest love does not announce itself loudly. Instead, I want you to know this: I will continue to choose you in the same quiet ways I always have. In patience. In understanding. In holding space for you when life feels overwhelming.</p>
+
+<p>If the new year brings you joy, I hope I get to celebrate it with you, even from afar. If it brings you challenges, I hope you remember that you do not carry them alone. There is someone who thinks of you at the turning of the year and feels grateful that you exist.</p>
+
+<p>As the clock moves forward and the world counts down, my thoughts are simple. I hope the new year is gentle with you. I hope it treats you with the kindness you so naturally give to others. And I hope, in moments of doubt or quiet, you remember that you are deeply cherished.</p>
+
+<p>This letter is my way of standing beside you at midnight, even if I cannot be there physically. A quiet reminder that while time moves on, some feelings remain exactly where they are meant to be.</p>
+
+<p>So as the new year begins, know this: you are still here, in my heart, just as you were before the countdown started. And that is something I carry with me into whatever comes next.</p>
+</div>
+
+<div class="gallery">
+<div class="photo"><img src="nisha1.jpg"><div class="caption">I LOVE THIS BADDIE FACE FR FR.</div></div>
+<div class="photo"><img src="nisha2.jpg"><div class="caption">MY MESSY BABY I LOVE.</div></div>
+<div class="photo"><img src="nisha3.jpg"><div class="caption">I TWEAKED OEVER THIS.</div></div>
+<div class="photo"><img src="nisha4.jpg"><div class="caption">EVERYTHING IS HEAVEN WITH YOU.</div></div>
+<div class="photo"><img src="nisha5.jpg"><div class="caption">THIS IS IN MY HEART.</div></div>
+<div class="photo"><img src="nisha6.jpg"><div class="caption">I LOVE YOU NISHA.</div></div>
+</div>
+
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const correctPassword = "NISHAISABADDIE";
+
+/* SET NEW YEAR DATE HERE */
+const unlockTime = new Date("January 1, 2026 00:00:00").getTime();
+/* FOR TESTING ONLY:
+const unlockTime = Date.now() - 1000;
+*/
+
+let timeUnlocked = false;
+
+setInterval(()=>{
+    const now = Date.now();
+    const diff = unlockTime - now;
+    const cd = document.getElementById("countdown");
+
+    if(diff <= 0){
+        cd.innerText = "It’s midnight.";
+        timeUnlocked = true;
+    } else {
+        const h = Math.floor(diff / 1000 / 60 / 60);
+        const m = Math.floor(diff / 1000 / 60) % 60;
+        const s = Math.floor(diff / 1000) % 60;
+        cd.innerText = `Unlocks in ${h}h ${m}m ${s}s`;
+    }
+},1000);
+
+function unlock(){
+    if(!timeUnlocked) return;
+
+    const p = document.getElementById("pass");
+    if(p.value === correctPassword){
+        const lock = document.getElementById("lock");
+        const content = document.getElementById("content");
+
+        lock.style.opacity = "0";
+        setTimeout(()=>{
+            lock.style.display = "none";
+            content.classList.add("show");
+            document.body.classList.add("night","unlocked");
+            document.getElementById("bgMusic").play();
+            hearts();
+            fireworks();
+        },800);
+    } else {
+        p.classList.add("shake");
+        setTimeout(()=>p.classList.remove("shake"),400);
+    }
+}
+
+function hearts(){
+    setInterval(()=>{
+        const h = document.createElement("div");
+        h.className = "heart";
+        h.innerText = "❤";
+        h.style.left = Math.random()*100 + "vw";
+        h.style.fontSize = (70 + Math.random()*40) + "px";
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(),18000);
+    },4000);
+}
+
+function fireworks(){
+    setInterval(()=>{
+        const f = document.createElement("div");
+        f.className = "firework";
+        f.style.left = Math.random()*100 + "vw";
+        f.style.top = Math.random()*50 + "vh";
+        document.body.appendChild(f);
+        setTimeout(()=>f.remove(),1200);
+    },3000);
+}
+</script>
+
+</body>
+</html>
