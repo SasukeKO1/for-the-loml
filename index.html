@@ -231,12 +231,12 @@ button{
 const correctPassword = "NISHAISABADDIE";
 
 /* SET NEW YEAR DATE HERE */
-const unlockTime = Date.now() - 1000;
+const unlockTime = new Date("January 1, 2026 00:00:00").getTime();
 /* FOR TESTING ONLY:
 const unlockTime = Date.now() - 1000;
 */
 
-let timeUnlocked = true;
+let timeUnlocked = false;
 
 setInterval(()=>{
     const now = Date.now();
@@ -303,6 +303,7 @@ function fireworks(){
 
 </body>
 </html>
+
 
 
 
